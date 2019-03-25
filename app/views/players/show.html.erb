@@ -1,0 +1,99 @@
+<center>
+<p class="main_name"> <%= link_to image_tag('main_name.png') %> </p>
+<h2>Player: <%= @player.name %></h2>
+<h3>ДНК: <%= @player.dna %></h3>
+</center>
+
+<div class="container-fluid">
+   <div class="row">
+    <div class="col-xs-5">
+		
+			<div class="row">
+				<div class="col-xs-3"> <%= image_tag('upgrade1.png', :height => '85px') %> <p class="name_upgrade">Бактерия (+1 ДНК к клику)</p></div>
+				<div class="col-xs-3"> <p>Куплено</p> <p class="upgrade_first">x<%= @player.level%> </p> </div>
+				<div class="col-xs-3"> <p>Стоимость</p> <p class="upgrade_first"><%= @player.level_cost %> ДНК</p> </div>
+				<div class="col-xs-3"> <p class="upgrade"><%= button_to "Buy", player_buy_1_url(@player), :class => "btn btn-success", :method => :get %></p> 				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-3"> <%= image_tag('upgrade2.jpg', :height => '85px') %> <p class="name_upgrade">Многоклеточные (+5 ДНК к клику)</p></div>
+				<div class="col-xs-3"> <p class="upgrade">x<%= @player.level2%> </p> </div>
+				<div class="col-xs-3"> <p class="upgrade"><%= @player.level2_cost %> ДНК</p> </div>
+				<div class="col-xs-3"> <p class="upgrade"><%= button_to "Buy", player_buy_2_url(@player), :class => "btn btn-success", :method => :get %></p> 				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-3"> <%= image_tag('upgrade3.png', :height => '85px') %> <p class="name_upgrade">Рыба (+50 ДНК к клику)</p></div>
+				<div class="col-xs-3"> <p class="upgrade">x<%= @player.level3%> </p> </div>
+				<div class="col-xs-3"> <p class="upgrade"><%= @player.level3_cost %> ДНК</p> </div>
+				<div class="col-xs-3"> <p class="upgrade"><%= button_to "Buy", player_buy_3_url(@player), :class => "btn btn-success", :method => :get %></p> 				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-3"> <%= image_tag('upgrade4.png', :height => '85px') %> <p class="name_upgrade">Рептилия (+90 ДНК к клику)</p></div>
+				<div class="col-xs-3"> <p class="upgrade">x<%= @player.level4%> </p> </div>
+				<div class="col-xs-3"> <p class="upgrade"><%= @player.level4_cost %> ДНК</p> </div>
+				<div class="col-xs-3"> <p class="upgrade"><%= button_to "Buy", player_buy_4_url(@player), :class => "btn btn-success", :method => :get %></p> 				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-3"> <%= image_tag('upgrade5.png', :height => '85px') %> <p class="name_upgrade">Млекопитающие (+300 ДНК к клику)</p></div>
+				<div class="col-xs-3"> <p class="upgrade">x<%= @player.level5%> </p> </div>
+				<div class="col-xs-3"> <p class="upgrade"><%= @player.level5_cost %> ДНК</p> </div>
+				<div class="col-xs-3"> <p class="upgrade"><%= button_to "Buy", player_buy_5_url(@player), :class => "btn btn-success", :method => :get %></p> 				</div>
+			</div>
+
+		</div>
+    <div class="col-xs-2"><%= link_to image_tag('1.png', :height => '200px'), player_click_url(@player) %>
+		<br>
+ДНК за клик: <%= 1 + @player.level + @player.level2 * 5 + @player.level3 * 50 + @player.level4 * 90 + @player.level5 * 300 + @player.level6 * 500 + @player.level7 * 850 + @player.level8 * 1200 + @player.level9 * 30000 + @player.level10 * 999999 %>
+<p><%= button_to "Выйти", players_index_url, :class => "btn btn-warning", :method => :get %></p>
+		</div>
+    <div class="col-xs-5">
+		
+			<div class="row">
+				<div class="col-xs-3"> <%= image_tag('upgrade6.png', :height => '85px') %> <p class="name_upgrade">Приматы (+500 ДНК к клику)</p></div>
+				<div class="col-xs-3"> <p>Куплено</p> <p class="upgrade_first">x<%= @player.level6%> </p> </div>
+				<div class="col-xs-3"> <p>Стоимость</p> <p class="upgrade_first"><%= @player.level6_cost %> ДНК</p> </div>
+				<div class="col-xs-3"> <p class="upgrade"><%= button_to "Buy", player_buy_6_url(@player), :class => "btn btn-success", :method => :get %></p> 				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-3"> <%= image_tag('upgrade7.jpeg', :height => '85px') %> <p class="name_upgrade">Неандерталец (+850 ДНК к клику)</p></div>
+				<div class="col-xs-3"> <p class="upgrade">x<%= @player.level7%> </p> </div>
+				<div class="col-xs-3"> <p class="upgrade"><%= @player.level7_cost %> ДНК</p> </div>
+				<div class="col-xs-3"> <p class="upgrade"><%= button_to "Buy", player_buy_7_url(@player), :class => "btn btn-success", :method => :get %></p> 				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-3"> <%= image_tag('upgrade8.png', :height => '85px') %> <p class="name_upgrade">Человек разумный (+1200 ДНК к клику)</p></div>
+				<div class="col-xs-3"> <p class="upgrade">x<%= @player.level8%> </p> </div>
+				<div class="col-xs-3"> <p class="upgrade"><%= @player.level8_cost %> ДНК</p> </div>
+				<div class="col-xs-3"> <p class="upgrade"><%= button_to "Buy", player_buy_8_url(@player), :class => "btn btn-success", :method => :get %></p> 				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-3"> <%= image_tag('upgrade9.jpg', :height => '85px') %> <p class="name_upgrade">Сверхчеловек (+30000 ДНК к клику)</p></div>
+				<div class="col-xs-3"> <p class="upgrade">x<%= @player.level9%> </p> </div>
+				<div class="col-xs-3"> <p class="upgrade"><%= @player.level9_cost %> ДНК</p> </div>
+				<div class="col-xs-3"> <p class="upgrade"><%= button_to "Buy", player_buy_9_url(@player), :class => "btn btn-success", :method => :get %></p> 				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-3"> <%= image_tag('upgrade10.jpg', :height => '85px') %> <p class="name_upgrade">СВЕРХРАЗУМ!!11! (+999999 ДНК к клику)</p></div>
+				<div class="col-xs-3"> <p class="upgrade">x<%= @player.level10%> </p> </div>
+				<div class="col-xs-3"> <p class="upgrade"><%= @player.level10_cost %> ДНК</p> </div>
+				<div class="col-xs-3"> <p class="upgrade"><%= button_to "Buy", player_buy_10_url(@player), :class => "btn btn-success", :method => :get %></p> 				</div>
+			</div>
+
+		</div>
+   </div>
+  </div>
+
+
+<div>Собрано ДНК за все время: <%= @player.lifetime_dna %></div>
+<div>Дата регистрации: <%= @player.created_at %></div>
+<div class="exit"><%= button_to "Удалить", @player, method: :delete, data: {confirm: "Точно удалить сохранение?"}, :class => "btn btn-danger"%></div>
+
+
+

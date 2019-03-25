@@ -1,0 +1,31 @@
+<center>
+<p class="main_name"> <%= link_to image_tag('main_name.png') %> </p>
+</center>
+
+
+<div class="container-fluid">
+ <div class="row">
+  <div class="col-xs-3">
+		<center>		
+		<table border="1">
+		<%  sorted_players = @players.sort_by { |h | h[:lifetime_dna] }.reverse %>
+		ТОП Игроков
+		<tr>
+			<th>Ник</th>
+			<th>ДНК за все время</th>
+		</tr>
+		<% sorted_players.each do |i| %>
+		<tr>
+			<td><%=  i.name %></td>
+			<td><%= i.lifetime_dna %></td>
+		</tr>
+		<% end %>
+		</table>
+		</center>
+	</div>
+  <div class="col-xs-6"><%= link_to image_tag('reg.png', :height => '200px'), new_player_url%></div>
+  <div class="col-xs-3"></div>
+ </div>
+</div>
+
+

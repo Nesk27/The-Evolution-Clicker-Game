@@ -1,0 +1,19 @@
+<center>
+<p class="main_name"> <%= link_to image_tag('main_name.png') %> </p>
+<h1>Обновление</h1>
+
+<%= form_for @player do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name, class: "reg" %>
+  </p>
+	<p>
+    <%= form.label :dna	 %><br>
+    <%= form.text_field :dna, class: "reg" %>
+  </p>
+
+  <p>
+    <%= form.submit class: "btn btn-success" %>
+  </p>
+<% end %>
+</center>
